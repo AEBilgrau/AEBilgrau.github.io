@@ -1,7 +1,7 @@
 # Site
 title:              Anders Ellern Bilgrau
-bio:                'Homepage of my small statistical consultancy'
-description:        "Homepage of my small statistical consultancy"
+bio:                'Hjemmesiden for mit lille statistiske konsulent biks'
+description:        "Dette er hjemmesiden for min lille statistiske konsulent enkelmandsvirksomhed, der er dedikeret til at give en 'no bullshit' tilgang til dine statistiske problemer."
 locale:             en_US
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site
@@ -41,7 +41,7 @@ instagram:          default
 github:             AEBilgrau
 
 # personal
-location:           Stoevring, Denmark
+location:           Skovbrynet 13, 9530 Støvring, Danmark
 phone:              +45 25 33 72 53
 email:              anders.ellern.bilgrau@gmail.com
 

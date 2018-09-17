@@ -1,13 +1,14 @@
 ---
 layout: page
-title: Jekyll Theme - About
-description: When building a website it's helpful to see what the focus of your site is. This page is an example of how to show a website's focus.
+title: Om mig
+description: Lidt omkring mig
 sitemap:
     priority: 0.7
-    lastmod: 2017-11-02
+    lastmod: 2018-09-17
     changefreq: weekly
 ---
-## About our Site
+
+## Om mig
 
 <span class="image left"><img src="{{ "/images/pic04.jpg" | absolute_url }}" alt="" /></span>
 
