@@ -26,7 +26,7 @@ sitemap:
 				<!-- Intro -->
 					<div id="intro">
             <h1>{{site.title}}</h1>
-						<h2>Passioneret statistisker & konsulent</h2>
+						<h2>Passioneret statistisk konsulent</h2>
 						<p>Big data, machine learning, real world evidence, data science, og AI. Hvad betyder de <b>egentlig</b>? Er de blot modeord?</p>
 						<ul class="actions">
 							<li><a href="#header" class="button icon solo fa-arrow-down scrolly">Continue</a></li>
@@ -44,12 +44,8 @@ sitemap:
 
             {% include nav.html %}
 
-						<ul class="icons">
-              <li><a href="https://twitter.com/{{site.twitter}}" class="icon fa-twitter" rel="nofollow"><span class="label">Twitter</span></a></li>
-              <li><a href="https://facebook.com/{{site.facebook}}" class="icon fa-facebook" rel="nofollow"><span class="label">Facebook</span></a></li>
-              <li><a href="https://instagram.com/{{site.instagram}}" class="icon fa-instagram" rel="nofollow"><span class="label">Instagram</span></a></li>
-              <li><a href="https://github.com/{{site.github}}" class="icon fa-github" rel="nofollow"><span class="label">GitHub</span></a></li>
-						</ul>
+						{% include icons.html %}
+						
 					</nav>
 
 				<!-- Main -->
@@ -58,13 +54,13 @@ sitemap:
 							<article class="post featured">
 								<header class="major">
 									<h2><a href="#">Statistisk i nye og gamle klæder</a></h2>
-									<p>Fælles for de nye data buzzwords er, at de alle omhandler statistiske metoder til forudsigelser eller  baseret på data. Jeg tilbyder en 'no bullshit' løsningstilgang til dine problemstillinger der <em>måske</em> eller <em>måske ikke</em> kan løses med dataanalyse og statistiske metoder&mdash;unanset om de er i de nye eller gamle klæder.</p>
+									<p>Fælles for de nye data buzzwords er, at de alle omhandler statistiske metoder til forudsigelser eller inferens baseret på data. Jeg tilbyder en 'no bullshit' løsningstilgang til dine problemstillinger der <em>måske</em> eller <em>måske ikke</em> kan løses med dataanalyse og statistiske metoder&mdash;unanset om de er i de nye eller gamle klæder.</p>
 								</header>
 								
-                <p>Med fødderne plantet solidt og dybt i den jyske muld, så vil jeg vil forsøge at guide dig til den rette løsning på jeres data problemer. Jeg leverer både dataanalyse og løsninger til prædiktionsproblemer, alt sammen kodet på et reproducerbar facon, og hvis ønsket pakket ind i en flot rapport. Jeg assisterer også gerne før data er indsamlet med design af forsøg og indsamling.</p>
+                <p>Med fødderne plantet solidt og dybt i den jyske muld, så vil jeg vil forsøge at føre dig til den rette løsning på jeres data problemer. Jeg leverer både dataanalyse og løsninger til prædiktionsproblemer, alt sammen kodet på et reproducerbar facon, og hvis ønsket pakket ind i en flot rapport. Jeg assisterer også gerne før data er indsamlet med design af forsøg og indsamling.</p>
                 
-								<a href="#" class="image main"><img src="{{ '/images/pic01.jpg' | absolute_url }}" alt="" /></a>
-								<p>Som du kan læse <a href="{{ '/about/' | absolute_url}}" >om mig</a>, så er jeg en passioneret statistiker og 'R' programmør der elsker løsninger der skaber værdi og videnskab. Skulle jeg ikke besidde de nødvendige kundskaber til at løse dit, indrømmer jeg det gerne og forsøger at sende jer til den rette mand i mit netværk. Giv mig en uforpligtende opringing eller mail, så vil jeg nyde at diskutere problemerne med dig.</p>
+								<a href="#" class="image fit"><img src="{{ '/images/mb2.jpg' | absolute_url }}" alt="" /></a>
+								<p>Som du kan læse <a href="{{ '/about/' | absolute_url}}" >om mig</a>, så er jeg en passioneret statistiker og 'R' programmør der elsker videnskab og værdiskabende løsninger. Skulle jeg ikke besidde de nødvendige kundskaber til at løse opgaven, indrømmer jeg det gerne og forsøger at sende dig videre i mit netværk. Giv mig en uforpligtende opringing eller mail, så vil jeg nyde at diskutere problemerne med dig.</p>
 
 							</article>
 
@@ -80,7 +76,7 @@ sitemap:
   									<a href="{{ post.url | absolute_url }}" class="image fit"><img src="{{ post.image | absolute_url }}" alt="" /></a>
   									<p>{{ post.excerpt }}</p>
   									<ul class="actions">
-  										<li><a href="{{ post.url | absolute_url }}" class="button">Full Story</a></li>
+  										<li><a href="{{ post.url | absolute_url }}" class="button">Læs mere</a></li>
   									</ul>
   								</article>
                   {% if mod3 == 0 %}
