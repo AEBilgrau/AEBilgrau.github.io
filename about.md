@@ -12,7 +12,7 @@ sitemap:
 
 <span class="image right"><img src="{{ "/images/me.jpg" | absolute_url }}" alt="" /></span>
 
-Jeg er en passioneret statistiker med flair for programmering og en stor selvdrevet skabertrang. Af uddannelse, er en kandidat i anvendt matematik med speciale i statistik igennem et tværfagligt samarbejde med Institut for matematatiske fag, Aalborg Universitet, og min ansættelse på Hematologisk Afdeling på Aalborg Hospital, dengang tilknyttet Århus Universitet. Dette samarbejde fortsatte i et biostatistik Ph.D. projekt der bestod af en række artikler om høj-dimensionel statistik om reproducerbarhed og statistiske metoder til data-integration med anvendelse i molekylær cancer biologi. Her beskæftigede jeg bl.a. med med følgende metoder:
+Jeg er en statistiker med flair for programmering og en stor selvdrevet skabertrang. Af uddannelse, er jeg Ph.D. i (bio)statistik samt kandidat i anvendt matematik med speciale i statistik. Begge grader er opnået igennem et tværfagligt samarbejde med Institut for Matematatiske Fag, Aalborg Universitet, og Hematologisk Afdeling, Aalborg Universitetshospital. Kort fortalt bestod Ph.D. projektet af en række metoder i høj-dimensionel statistik om reproducerbarhed og data-integration med anvendelse i molekylær cancer biologi. Her beskæftigede jeg bl.a. med med følgende metoder:
 
 <div class="box">
   <ul>
@@ -51,12 +51,13 @@ Jeg er også såvidt muligt aktiv på [StackOverflow][3], [GitHub][4] og min [we
     <li>Generaliserede lineære modeller, mixed effects modeller, m.m.</li>
     <li>Clustering og klassifikations metoder (høj og lav dimensionelle)</li>
     <li>Overlevelses analyse</li>
-    <li>10 års erfaring med R programmering inkl udvinkling af R-pakker</li>
+    <li>Over 10 års erfaring med R programmering inkl udvinkling af R-pakker</li>
     <li>Shiny webapplikationer</li>
     <li>Reproducerbar afrapporting af resultater</li>
   </ul>
 </div>
 
+Herudover har jeg undervist på både private og på universtitet samt holdt mange foredrag. Skulle i have brug for undervisning eller foredrag i R eller statistik er i også meget velkomne til at kontakte mig. 
 
 
 
