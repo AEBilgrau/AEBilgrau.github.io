@@ -9,19 +9,24 @@ sitemap:
 ---
 
 
-# Portefølge
+## Portefølge
+Udvalgt arbejde:
 
 <div id="main">
 <section class="posts">
   <article>
-  <h2><a href="/">Aarhus Universitet</a></h2>
-  <a href="/blog/post4/" class="image fit"><img src="/images/pic02.jpg" alt=""></a>
-  <p>Statistisk hjælp og analyse af materiale fra Peter Bangsgaard Stoustrup, Sektion for Ortodonti, Aarhus Universitet. Her forsøgte vi at fastlægge incidencen af orofaciale komplikationer samt indentificere prædiktorer for dentofaciale vækstafvigelser i patienter med Juvenil Idiopatisk Artrit (JIA) også kendt som børneleddegigt. </p>
+  <h3><a href="/portfolio/">Sektion for Ortodonti, Århus Universitet</a></h3>
+
+    <img src="https://upload.wikimedia.org/wikipedia/en/4/44/Aarhus_University_logo.png" alt="" height="60">
+
+  <p>Statistisk analyse af materiale fra Peter Bangsgaard Stoustrup, Sektion for Ortodonti, Aarhus Universitet. Vi estimerede incidencen af orofaciale komplikationer samt indentificere prædiktorer for dentofaciale vækstafvigelser i patienter med Juvenil Idiopatisk Artrit (JIA) også kendt som børneleddegigt. </p>
   </article>
   <article>
-  <h2><a href="/blog/post3/">Post 3: Boring</a></h2>
-  <a href="/blog/post3/" class="image fit"><img src="/images/pic02.jpg" alt=""></a>
-  <p>Huge thanks to HTML5 UP for making this awesome template! Let's see what it can do</p>
+  <h3><a href="/portfolio/">Hæmatologisk afdeling, Aalborg Universitet</a></h3>
+
+    <img src="https://upload.wikimedia.org/wikipedia/en/b/b9/AAU_logo_2012.png" alt=""  height="60">
+
+  <p>Co-udvikler af <a href="http://hemaClass.org">hemaClass.org</a>, en web-applikation der klassificerer  genetiske prøver af patienter med diffust storcellet B-celle lymfom og myelomatose i grupper der er prognostiske for overlevelsen. Sitet var udviklet som en proof-of-concept til at fremskynde forskningen til klinisk praksis.</p>
   </article>
 </section>
 </div>
