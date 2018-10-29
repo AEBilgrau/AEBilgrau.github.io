@@ -45,7 +45,7 @@ Efter et kort post-doc ansættelse, blev jeg ansat ved Novo Nordisk hvor jeg sid
 
 Et uddybende CV kan sendes ved efterspørgsel. Alternativt kan du tage et kig på min [LinkedIn profil][1] hvor du også er velkommen til at kontakte mig. Via [Google Scholar][2] kan du se en liste over mine videnskablige publikationer.
 
-Jeg er også såvidt muligt aktiv på [StackOverflow][3], [GitHub][4] og min [weblog][5] her på siden.
+Jeg er også såvidt muligt aktiv på [StackOverflow][3], [GitHub][4] og min [blog][5] her på siden.
 
 Herudover har jeg undervist både private og på universtitet samt holdt mange foredrag. Skulle du have et ønske om undervisning eller foredrag i R eller statistik er du også meget velkommen til at kontakte mig. 
 
