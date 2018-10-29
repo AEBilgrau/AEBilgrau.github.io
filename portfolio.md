@@ -38,7 +38,7 @@ Jeg tilbyder følgende foredrag og kurser:
 * Data science: Statistik med hovedet under armen?
 * Introduktion til R programming
 * Curse of dimensionality, p-hacking, and other common statistical pitfalls
-* Statistik med manglende data
+* Statistik uden data?---Hvad gør man med huller i sine data?
 * Unsupervised Clustering and	Meta-analysis using Gaussia Mixture	Copula Models	
 * Fused Ridge Estimation of Multiple Inverse Class Covariance Matrices from High-Dimensional Data
 
