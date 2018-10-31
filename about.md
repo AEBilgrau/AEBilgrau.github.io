@@ -10,7 +10,7 @@ sitemap:
 
 ## Om mig
 
-<span class="image left"><img src="{{ "/images/me.jpg" | absolute_url }}" alt="" /></span>
+<span class="image left"><img src="{{ "/images/me_v2.jpg" | absolute_url }}" alt="" /></span>
 
 Jeg er en statistiker med flair for programmering og en stor selvdrevet skabertrang. Jeg er uddannet Ph.d. i (bio)statistik samt kandidat i anvendt matematik med speciale i statistik. Begge grader er opnået igennem et tværfagligt samarbejde med Institut for Matematiske Fag, Aalborg Universitet, og Hæmatologisk Afdeling, Aalborg Universitetshospital. 
 
