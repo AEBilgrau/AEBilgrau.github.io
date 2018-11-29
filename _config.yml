@@ -1,6 +1,6 @@
 # Site
 title:              Anders Ellern Bilgrau
-bio:                'Hjemmesiden for mit lille statistiske konsulent biks'
+bio:                'Hjemmesiden for mit lille statistiske konsulentbiks'
 description:        "Dette er hjemmesiden for min lille statistiske konsulent enkelmandsvirksomhed, der er dedikeret til at give en 'no bullshit' tilgang til dine statistiske problemer."
 locale:             en_US
 baseurl: "" # the subpath of your site, e.g. /blog
@@ -62,4 +62,5 @@ jekyll-mentions:
     base_url: https://github.com
 
 # Exclude list
-exclude: [elements.html, mysite.Rproj, README.md, Gemfile, Gemfile.lock, node_modules, gulpfile.js, package.json, _site, src, vendor, CNAME, LICENSE, Rakefile, old]
+exclude: [elements.html, mysite.Rproj, README.md, Gemfile, Gemfile.lock, 
+  node_modules, gulpfile.js, package.json, _site, src, vendor, CNAME, LICENSE, Rakefile, old]
