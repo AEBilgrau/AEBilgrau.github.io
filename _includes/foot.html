@@ -1,17 +1,17 @@
 <footer id="footer">
   <section>
-    <form method="POST" action="https://formspree.io/{{site.email}}">
+    <form action="https://formspree.io/{{site.email}}" method="POST">
       <div class="field">
         <label for="name">Navn</label>
-        <input type="text" name="name" id="name" />
+        <input type="text" name="name" id="name" placeholder="Dit navn" />
       </div>
       <div class="field">
         <label for="email">Email</label>
-        <input type="text" name="email" id="email" />
+        <input type="text" name="email" id="email" placeholder="Din email" />
       </div>
       <div class="field">
         <label for="message">Besked</label>
-        <textarea name="message" id="message" rows="3"></textarea>
+        <textarea name="message" id="message" rows="3" placeholder="Din besked"></textarea>
       </div>
       <ul class="actions">
         <li><input type="submit" value="Send besked" /></li>
