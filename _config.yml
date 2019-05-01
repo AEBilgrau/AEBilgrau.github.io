@@ -1,10 +1,10 @@
 # Site
 title:              Anders Ellern Bilgrau
-bio:                'Hjemmesiden for mit lille statistiske konsulentbiks'
+bio:                'Hjemmesiden for min lille statistiske konsulentbiks'
 description:        "Dette er hjemmesiden for min lille statistiske konsulent enkelmandsvirksomhed, der er dedikeret til at give en 'no bullshit' tilgang til dine statistiske problemer."
 locale:             en_US
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site
+url: ""     # the base hostname & protocol for your site
 
 defaults:
 - scope:
@@ -33,11 +33,8 @@ sass:
 # Comments
 disqus_shortname:   default
 
-# Social
+# social
 analytics-id:       "default"
-twitter:            default
-facebook:           default
-instagram:          default
 github:             AEBilgrau
 stackoverflow:      1568306
 linkedin:           aebilgrau
@@ -63,4 +60,5 @@ jekyll-mentions:
 
 # Exclude list
 exclude: [elements.html, mysite.Rproj, README.md, Gemfile, Gemfile.lock, 
-  node_modules, gulpfile.js, package.json, _site, src, vendor, CNAME, LICENSE, Rakefile, old]
+  node_modules, gulpfile.js, package.json, _site, src, vendor, CNAME, LICENSE,
+  Rakefile, _posts_src, knit_all.R]
