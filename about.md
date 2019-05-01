@@ -17,24 +17,20 @@ Jeg er en statistiker med flair for programmering og en stor selvdrevet skabertr
 Kort fortalt bestod mit Ph.d.-projekt af en række metoder i høj-dimensionel statistik om reproducerbarhed og data-integration med anvendelse i molekylær cancer biologi. I arbejdet beskæftigede jeg bl.a. med følgende metoder:
 
 <div class="box">
-  <ul>
-    <li>Høj-dimensionelle og lav-dimensionelle metoder i alm. og regulariseret regression, clusteranalyse, klassifikations-metoder, estimation af netværks modeller</li>
-    <li>Over 10 års erfaring med R programmering, R software pakker og løsninger, Shiny web applikationer, samt integration mellem R og C++ for hurtigere processering af data.</li>
-    <li>Multiple testing og dens problemer</li>
-    <li>Reproducerbare workflows og afrapportering</li>
-  </ul>
+ * Høj-dimensionelle og lav-dimensionelle metoder i alm. og regulariseret regression, clusteranalyse, klassifikations-metoder, estimation af netværks modeller</li>
+ * Over 10 års erfaring med R programmering, R software pakker og løsninger, Shiny web applikationer, samt integration mellem R og C++ for hurtigere processering af data.</li>
+ * Multiple testing og dens problemer</li>
+ * Reproducerbare workflows og afrapportering</li>
 </div>
 
 Efter et kort post-doc ansættelse, blev jeg ansat ved Novo Nordisk, hvor jeg siden har beskæftiget mig med mere traditionelle statistiske problemer.
 
 <div class="box">
-  <ul>
-    <li>Design og planlægning af kliniske forsøg, primært erfaring i fase I og III</li>
-    <li>Generaliserede lineære modeller, mixed effects modeller, bestemmelse af stikprøvestørrelse, time-to-event analyse, m.m.</li>
-    <li>Estimanter og missing data</li>
-    <li>SAS-programmering</li>
-    <li>Afrapportering, visualisering, og den første formidling af nye resultater</li>
-  </ul>
+ * Design og planlægning af kliniske forsøg, primært erfaring i fase I og III</li>
+ * Generaliserede lineære modeller, mixed effects modeller, bestemmelse af stikprøvestørrelse, time-to-event analyse, m.m.</li>
+ * Estimanter og missing data</li>
+ * SAS-programmering</li>
+ * Afrapportering, visualisering, og den første formidling af nye resultater</li>
 </div>
 
 
