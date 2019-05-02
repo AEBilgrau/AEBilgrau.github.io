@@ -4,7 +4,7 @@ bio:                'Hjemmesiden for min lille statistiske konsulentbiks'
 description:        "Dette er hjemmesiden for min lille statistiske konsulent enkelmandsvirksomhed, der er dedikeret til at give en 'no bullshit' tilgang til dine statistiske problemer."
 locale:             en_US
 baseurl: "" # the subpath of your site, e.g. /blog
-url: ""     # the base hostname & protocol for your site
+url: "https://bilgrau.com" # the base hostname & protocol for the site, e.g. http://example.com
 
 defaults:
 - scope:
