@@ -11,6 +11,10 @@ output:
     toc: yes
 ---
 
+```{r}
+library("kableExtra")
+```
+
 
 ## Background
 During the finalisation of my PhD, I implemented the so-called Hierachical Edge Bundling plotting method for a paper [now published](https://projecteuclid.org/euclid.aoas/1536652979) in the Annals of Applied Statistics.
@@ -52,11 +56,17 @@ devtools::install_github("AEBilgrau/HierarchicalEdgeBundles")
 
 ### Illustration of data and package usage
 
-To illustrate the package, we use a go-to data example in **R**. The `mtcars` dataset:
+To illustrate the package, we use a go-to dataset in **R**. The `mtcars` dataset:
 
 ```{r}
 data(mtcars)
-head(mtcars, n = 10)
+```
+```{r, results='asis', echo = FALSE}
+mtcars %>% 
+  kable() %>% 
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"),
+                full_width = FALSE) %>% 
+  scroll_box(height = "250px")
 ```
 
 These data are various specs for 32 cars. 
@@ -69,14 +79,26 @@ Using the euclidean metric we get:
 ```{r}
 car_dist <- dist(mtcars) # Compute pairwise distances 
 
-# Show first five rows and columns 
+# Show first four rows and columns 
 round(as.matrix(car_dist)[1:4, 1:4], 1)
 ```
 
-These distance are (some) measure of distance between the cars. 
+These distance are some measure of distance between the cars. 
 A larger value corresponds to a greater dissimilarity of the cars. 
 We do not here bother to consider if the euclidian metrics is well suits (it is not).
-Now, note that since this is a symmetric matrix, it can be represente as a complete weighted graph. 
+Now, note that since this is a symmetric matrix, it can be represente as a complete weighted graph.
+
+```{r}
+library("igraph")
+grph <- graph_from_adjacency_matrix(as.matrix(car_dist),
+                                    mode = "undirected", weighted = TRUE,
+                                    diag = FALSE)
+tmp <- function(x) (x - min(x))/max(x - min(x))
+E(grph)$width <-5*tmp(E(grph)$weight)
+
+plot(grph)
+```
+
 The first of our two ingredients.
 
 Using the  dissimilarities we can, for example, use regular hierachical clustering to arrive a the second ingredient:
