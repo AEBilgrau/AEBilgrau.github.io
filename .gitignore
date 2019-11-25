@@ -3,3 +3,4 @@ _site/
 .DS_Store
 .Rproj.user
 .Rhistory
+__old__

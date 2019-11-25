@@ -1,0 +1,6 @@
+[submodule "hugo-theme-massively"]
+	path = themes/hugo-theme-massively
+	url = https://github.com/curtistimson/hugo-theme-massively.git
+[submodule "themes/hermit"]
+	path = themes/hermit
+	url = https://github.com/Track3/hermit.git
