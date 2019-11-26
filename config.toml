@@ -68,7 +68,7 @@ title = "Anders Ellern Bilgrau"
   themeColor = "#495f5c"
 
   homeSubtitle = '"Data scientist" (statistician, programmer)'
-  # footerCopyright = ' &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
+  footerCopyright = ' · <a href="/en/">english</a> · <a href="/">dansk</a>'
   # bgImg = ""  # Homepage background-image URL
 
   # Prefix of link to the git commit detail page. GitInfo must be enabled.
