@@ -102,6 +102,5 @@ title = "Anders Ellern Bilgrau"
     name = "stackoverflow"
     url = "https://stackoverflow.com/u/1568306"
   [[params.social]]
-    name = "google3"
-    url = "https://scholar.google.dk/citations?user=zQNl61YAAAAJ&amp;hl=en"
-
+    name = "google"
+    url = "https://scholar.google.dk/citations?user=zQNl61YAAAAJ"
