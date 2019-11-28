@@ -2,6 +2,7 @@
 author: "Michael Henderson"
 date: 2014-09-28
 title: Sådan laver du et nyt tema
+draft: true
 ---
 
 ## Introduction

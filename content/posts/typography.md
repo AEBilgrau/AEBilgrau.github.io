@@ -6,6 +6,7 @@ featuredImg: ""
 tags: 
   - Demo
   - Typography
+draft: true
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -58,8 +59,7 @@ Lists:
 
 Syntax Highlighting:
 
-```javascript
-var num1, num2, sum
+```jjavascriptvar num1, num2, sum
 num1 = prompt("Enter first number")
 num2 = prompt("Enter second number")
 sum = parseInt(num1) + parseInt(num2) // "+" means "add"

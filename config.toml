@@ -90,9 +90,6 @@ title = "Anders Ellern Bilgrau"
     name = "email"
     url = "mailto:anders.ellern.bilgrau@gmail.com"
   [[params.social]]
-    name = "twitter"
-    url = "https://twitter.com/aebilgrau"
-  [[params.social]]
     name = "linkedin"
     url = "https://linkedin.com/in/aebilgrau"
   [[params.social]]
@@ -102,5 +99,8 @@ title = "Anders Ellern Bilgrau"
     name = "stackoverflow"
     url = "https://stackoverflow.com/u/1568306"
   [[params.social]]
-    name = "google"
+    name = "twitter"
+    url = "https://twitter.com/aebilgrau"
+  [[params.social]]
+    name = "google-scholar"
     url = "https://scholar.google.dk/citations?user=zQNl61YAAAAJ"
