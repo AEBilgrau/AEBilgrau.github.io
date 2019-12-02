@@ -18,7 +18,7 @@ title = "Anders Ellern Bilgrau"
   
 [languages.dk]
   weight = 0
-  homeSubtitle = '"Data scientist" (statistiker, programmør)'
+  homeSubtitle = 'Statistiker, programmør, "data scientist"...'
   languageName = "Dansk"
 
 [[languages.dk.menu.main]]
@@ -33,7 +33,7 @@ title = "Anders Ellern Bilgrau"
 
 [languages.en]
   weight = 1
-  homeSubtitle = '"Data scientist" (statistician, programmer)'
+  homeSubtitle = 'Statistician, programmer, "data scientist"...'
   languageName = "English"
 
 [[languages.en.menu.main]]
@@ -68,14 +68,14 @@ title = "Anders Ellern Bilgrau"
   themeColor = "#495f5c"
 
   homeSubtitle = '"Data scientist" (statistician, programmer)'
-  footerCopyright = ' · <a href="/en/">english</a> · <a href="/">dansk</a>'
+  footerCopyright = ' · <a href="/">dansk</a> · <a href="/en/">english</a>'
   # bgImg = ""  # Homepage background-image URL
 
   # Prefix of link to the git commit detail page. GitInfo must be enabled.
   gitUrl = "https://github.com/AEBilgrau/AEBilgrau.github.io/commit/"
 
   # Toggling this option needs to rebuild SCSS, requires Hugo extended version
-  justifyContent = true  # Set "text-align: justify" to `.content`.
+  justifyContent = false  # Set "text-align: justify" to `.content`.
 
   relatedPosts = false  # Add a related content section to all single posts page
 
