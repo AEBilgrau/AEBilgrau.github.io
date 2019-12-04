@@ -31,7 +31,7 @@ Efter et kort post-doc ansættelse, blev jeg ansat ved Novo Nordisk, hvor jeg i 
  * SAS-programmering
  * Afrapportering, visualisering, og den første formidling af nye resultater
 
-Slutteligt er jeg nu ansat ved [Seluxit](http://seluxit.com) i stillingen som senior data scientist hvor jeg benytter et meget bredt repertoire af data science teknikker, statistiske modeller, og software.  
+Slutteligt er jeg nu ansat ved [Seluxit](http://seluxit.com) i stillingen som *senior data scientist* hvor jeg benytter et meget bredt repertoire af data science teknikker, statistiske modeller, og software.  
 
 
 ## Profil, CV og videnskabligt arbejde
