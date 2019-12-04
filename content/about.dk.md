@@ -18,10 +18,10 @@ Jeg er en statistiker med flair for programmering og en stor selvdrevet skabertr
 
 Kort fortalt bestod mit Ph.d.-projekt af en række metoder i høj-dimensionel statistik om reproducerbarhed og data-integration med anvendelse i molekylær cancer biologi. I arbejdet beskæftigede jeg bl.a. med følgende metoder:
 
- * Høj-dimensionelle og lav-dimensionelle metoder i alm. og regulariseret regression, clusteranalyse, klassifikations-metoder, estimation af netværks modeller</li>
- * Over 10 års erfaring med R programmering, R software pakker og løsninger, Shiny web applikationer, samt integration mellem R og C++ for hurtigere processering af data.</li>
- * Multiple testing og dens problemer</li>
- * Reproducerbare workflows og afrapportering</li>
+ * Høj-dimensionelle og lav-dimensionelle metoder i alm. og regulariseret regression, clusteranalyse, klassifikations-metoder, estimation af netværks modeller
+ * Over 10 års erfaring med R programmering, R software pakker og løsninger, Shiny web applikationer, samt integration mellem R og C++ for hurtigere processering af data.
+ * Multiple testing og dens problemer
+ * Reproducerbare workflows og afrapportering
 
 Efter et kort post-doc ansættelse, blev jeg ansat ved Novo Nordisk, hvor jeg i cirka 4 år beskæftiget mig med mere traditionelle statistiske problemer.
 
