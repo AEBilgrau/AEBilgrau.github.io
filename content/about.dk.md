@@ -27,7 +27,7 @@ Efter et kort post-doc ansættelse, blev jeg ansat ved Novo Nordisk, hvor jeg i 
 
  * Design og planlægning af kliniske forsøg, primært erfaring i fase I og III
  * Generaliserede lineære modeller, mixed effects modeller, bestemmelse af stikprøvestørrelse, time-to-event analyse, m.m.
- * Estimanter og missing data
+ * Estimanter, estimatorer, estimater og missing data
  * SAS-programmering
  * Afrapportering, visualisering, og den første formidling af nye resultater
 
@@ -42,7 +42,7 @@ Min profil er bedst beskrevet på [LinkedIn](https://www.linkedin.com/in/aebilgr
 
 Jeg er også så vidt muligt aktiv på [StackOverflow](https://stackoverflow.com/users/1568306/anders-ellern-bilgrau), [GitHub](https://github.com/AEBilgrau) og min [blog](/posts/) her på siden.
 
-Herudover har jeg undervist både privat og på universitet samt holdt mange foredrag og oplæg. Skulle du have et ønske om undervisning eller foredrag i R eller statistik, er du også meget velkommen til at kontakte mig. 
+Herudover har jeg undervist både privat og på universitet samt holdt mange foredrag og oplæg. Skulle du have et ønske om undervisning eller foredrag i R, data science eller statistik, er du også meget velkommen til at kontakte mig. 
 
 ---
 

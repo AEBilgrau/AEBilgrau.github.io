@@ -18,18 +18,18 @@ I am a statistician with a flair for programming and a self-driven creative urge
 
 In short, my PhD project consisted of a number of methods in high-dimensional statistics on reproducibility and data integration with applications in molecular cancer biology. In my work, I worked using the following methods:
 
- * Høj-dimensionelle og lav-dimensionelle metoder i alm. og regulariseret regression, clusteranalyse, klassifikations-metoder, estimation af netværks modeller</li>
- * Over 10 års erfaring med R programmering, R software pakker og løsninger, Shiny web applikationer, samt integration mellem R og C++ for hurtigere processering af data.</li>
- * Multiple testing og dens problemer</li>
- * Reproducerbare workflows og afrapportering</li>
+ * High-dimensional and low-dimensional methods in general. and regularized regression, cluster analysis, classification methods, estimation of network models
+ * Over 10 years of experience with R programming, R software packages and solutions, Shiny web applications, and integration between R and C ++ for faster data processing.
+ * Multiple testing and its problems
+ * Reproducible workflows and reporting
 
-Efter et kort post-doc ansættelse, blev jeg ansat ved Novo Nordisk, hvor jeg i cirka 4 år beskæftiget mig med mere traditionelle statistiske problemer.
+After a short post-doc appointment, I was employed by Novo Nordisk, where for about 4 years I dealt with more traditional statistical problems.
 
- * Design og planlægning af kliniske forsøg, primært erfaring i fase I og III
- * Generaliserede lineære modeller, mixed effects modeller, bestemmelse af stikprøvestørrelse, time-to-event analyse, m.m.
- * Estimanter og missing data
- * SAS-programmering
- * Afrapportering, visualisering, og den første formidling af nye resultater
+ * Design and planning of clinical trials, primarily experience in Phase I and III
+ * Generalized linear models, mixed effects models, sample size determination, time-to-event analysis, etc.
+ * Estimands, estimators, estimates and missing data
+ * SAS programming
+ * Reporting, visualization, and the first dissemination of new results
 
 Finally, I am now currently employed at [Seluxit](http://seluxit.com) in the position of *senior data scientist* where I use a very broad repertoire of data science techniques, statistical models, and software.
 
@@ -43,7 +43,7 @@ My profile is best described on [LinkedIn] (https://www.linkedin.com/in/aebilgra
 
 I am also active as far as possible on [StackOverflow] (https://stackoverflow.com/users/1568306/anders-ellern-bilgrau), [GitHub] (https://github.com/AEBilgrau) and my [blog] (/ posts /) here on the site.
 
-In addition, I have taught both privately and at university, as well as giving many lectures and presentations. Should you have a desire for teaching or lecturing in R or statistics, you are also very welcome to contact me.
+In addition, I have taught both privately and at university, as well as giving many lectures and presentations. Should you have a desire for a course or presentation on R, statistics, or data science you are also very welcome to contact me.
 
 ---
 
