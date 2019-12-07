@@ -1,6 +1,6 @@
 baseURL = "https://bilgrau.com"
 languageCode = "da-dk"
-defaultContentLanguage = "dk"
+defaultContentLanguage = "da"
 theme = "hermit"
 enableGitInfo = true
 pygmentsCodefences  = true
@@ -16,24 +16,25 @@ title = "Anders Ellern Bilgrau"
 [author]
   name = "Anders Ellern Bilgrau"
   
-[languages.dk]
+[languages.da]
   weight = 0
-  homeSubtitle = 'Statistiker, programmør, "data scientist"...'
+  homeSubtitle = 'Statistiker, programmør, "data scientist", ...'
   languageName = "Dansk"
 
-[[languages.dk.menu.main]]
+[[languages.da.menu.main]]
   name = "Om mig"
   url = "about/"
   weight = 10
-
-[[languages.dk.menu.main]]
+  
+  
+[[languages.da.menu.main]]
   name = "Blog"
   url = "posts/"
   weight = 20
 
 [languages.en]
   weight = 1
-  homeSubtitle = 'Statistician, programmer, "data scientist"...'
+  homeSubtitle = 'Statistician, programmer, "data scientist", ...'
   languageName = "English"
 
 [[languages.en.menu.main]]

@@ -1,6 +1,6 @@
 ---
 title: "Om mig"
-date: "2019-11-27"
+date: "2019-12-04"
 images:
   - /me.jpg
 tags:

@@ -14,7 +14,7 @@ tags:
 
 I am a statistician with a flair for programming and a self-driven creative urge. I am a Ph.D. in (bio)statistics and a master in applied mathematics specializing in statistics. Both degrees were obtained through an interdisciplinary collaboration with the Department of Mathematical Sciences, Aalborg University, and the Hematological Department, Aalborg University Hospital.
 
-{{< figure src="/network2_v3.jpg" alt="image" caption="Visualisering af et gen-netværk" class="right" >}}
+{{< figure src="/network2_v3.jpg" alt="image" caption="Visualisering af et gen-netværk" width="204" class="right"  >}}
 
 In short, my PhD project consisted of a number of methods in high-dimensional statistics on reproducibility and data integration with applications in molecular cancer biology. In my work, I worked using the following methods:
 
