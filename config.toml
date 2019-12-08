@@ -26,11 +26,15 @@ title = "Anders Ellern Bilgrau"
   url = "about/"
   weight = 10
   
+[[languages.da.menu.main]]
+  name = "Portefølje"
+  url = "portfolio/"
+  weight = 20
   
 [[languages.da.menu.main]]
   name = "Blog"
   url = "posts/"
-  weight = 20
+  weight = 30
 
 [languages.en]
   weight = 1
