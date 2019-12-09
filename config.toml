@@ -45,12 +45,16 @@ title = "Anders Ellern Bilgrau"
   name = "About me"
   url = "en/about/"
   weight = 10
-
+  
+[[languages.en.menu.main]]
+  name = "Portfolio"
+  url = "portfolio/"
+  weight = 20
+  
 [[languages.en.menu.main]]
   name = "Posts"
   url = "en/posts/"
-  weight = 20
-
+  weight = 30
 
 [blackfriday]
   # hrefTargetBlank = true

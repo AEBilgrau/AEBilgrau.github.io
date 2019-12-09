@@ -24,12 +24,13 @@ Statistisk analyse af materiale fra Peter Bangsgaard Stoustrup, Sektion for Orto
 
 {{< figure src="https://upload.wikimedia.org/wikipedia/en/b/b9/AAU_logo_2012.png" alt="image" caption="" class="">}}
 
-Co-udvikler af <a href="http://hemaClass.org">hemaClass.org</a>, en web-applikation der klassificerer  genetiske prøver af patienter med diffust storcellet B-celle lymfom og myelomatose i grupper der er prognostiske for overlevelsen. Sitet blev udviklet som et proof-of-concept til at fremskynde forskningen til klinisk praksis.</p>
+Co-udvikler af <a href="http://hemaClass.org">hemaClass.org</a>, en web-applikation der klassificerer  genetiske prøver af patienter med diffust storcellet B-celle lymfom og myelomatose i grupper der er prognostiske for overlevelsen. Sitet blev udviklet som et proof-of-concept til at fremskynde forskningen til klinisk praksis.
 
 ---
 
-## Foredrag & kurser
-Jeg tilbyder følgende foredrag og kurser:
+## Foredrag & 
+
+Jeg tilbyder også foredrag og kurser. Det kunne blandt andet være:
 
 * Data science: Statistik med hovedet under armen?
 * Introduktion til R-programmering
