@@ -35,9 +35,9 @@ Jeg tilbyder også foredrag og kurser. Det kunne blandt andet være:
 * Data science: Statistik med hovedet under armen?
 * Introduktion til R-programmering
 * Introduction to the tidyverse
-* Curse of Dimensionality, P-hacking, and Other Common Statistical Pitfalls
+* Curse of dimensionality, P-hacking, and Other Common Statistical Pitfalls
 * Statistik uden data?---Hvad gør man med huller i sine data?
-* Unsupervised Clustering and	Meta-analysis using Gaussia Mixture	Copula Models	
+* Unsupervised Clustering and	Meta-analysis using Gaussian Mixture	Copula Models	
 * Fused Ridge Estimation of Multiple Inverse Class Covariance Matrices from High-Dimensional Data
 
 Jeg kan naturligvis lave skræddersyede kurser eller foredrag for statistiske metoder og software pakker, som jeg har udviklet og været involveret i. Skulle I være i tvivl eller have andre specifikke ønsker kan I kontakte mig.

@@ -35,9 +35,9 @@ I also offer lectures and courses. For example, topics might be:
 * Data science: Statistics without thinking?
 * Introduction to R Programming
 * Introduction to the tidyverse
-* Curse of Dimensionality, P-hacking, and Other Common Statistical Pitfalls
+* Curse of dimensionality, P-hacking, and Other Common Statistical Pitfalls
 * Statistics without data? --- What do you do with gaps in your data?
-* Unsupervised Clustering and Meta-analysis using Gaussia Mixture Copula Models
+* Unsupervised Clustering and Meta-analysis using Gaussian Mixture Copula Models
 * Fused Ridge Estimation of Multiple Inverse Class Covariance Matrices from High-Dimensional Data
 
 I can of course do tailor-made courses or lectures for statistical methods and software packages that I have developed and been involved in. Should you have any doubts or have any other specific requests, please contact me.
