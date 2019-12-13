@@ -3,7 +3,7 @@ library("knitr")
 # Get all source .Rmd files and all .md files
 rmd_files <- list.files("./content", pattern = "\\.Rmd$", recursive = TRUE,
                         full.names = TRUE, ignore.case = TRUE)
-force_knit <- TRUE
+force_knit <- FALSE
 
 # Run through all files
 for (f in rmd_files)  {

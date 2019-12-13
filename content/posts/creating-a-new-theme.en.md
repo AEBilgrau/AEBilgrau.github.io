@@ -3,6 +3,12 @@ author: "Michael Henderson"
 date: 2014-09-28
 title: Creating a New Theme
 draft: true
+tags:
+  - "go"
+  - "golang"
+  - "hugo"
+  - "development"
+toc: true
 ---
 
 ## Introduction

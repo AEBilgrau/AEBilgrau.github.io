@@ -2,7 +2,13 @@
 author: "Michael Henderson"
 date: 2014-09-28
 title: Sådan laver du et nyt tema
-draft: true
+draft: false
+tags:
+  - "go"
+  - "golang"
+  - "hugo"
+  - "development"
+toc: true
 ---
 
 ## Introduction
