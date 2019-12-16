@@ -1,4 +1,6 @@
 
+all: posts server
+
 server:
 	hugo server
 
