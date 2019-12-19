@@ -3,6 +3,10 @@
 	overflow-x: auto;
 }
 
+body {
+  text-align: justify;
+}
+
 tbody table tr td {
   padding: 0.2rem 0.7rem;
   border: none;
