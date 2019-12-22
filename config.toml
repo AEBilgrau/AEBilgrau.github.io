@@ -52,7 +52,7 @@ title = "Anders Ellern Bilgrau"
   weight = 20
   
 [[languages.en.menu.main]]
-  name = "Posts"
+  name = "Blog"
   url = "en/posts/"
   weight = 30
 
