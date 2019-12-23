@@ -25,7 +25,7 @@ library("kableExtra")
 options(kableExtra.html.bsTable = TRUE)
 ```
 
-{{< figure src="/network2.jpg" alt="image" caption="Hierarchical edge bundling of a gene network" class="big" >}}
+{{< figure src="/images/network2.jpg" alt="image" caption="Hierarchical edge bundling of a gene network" class="big" >}}
 
 ## Background
 

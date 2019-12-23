@@ -14,7 +14,7 @@ tags:
 
 #### Sektion for Ortodonti, Aarhus Universitet
 
-{{< figure src="/aulogo_uk_var2_white.png" alt="image" caption="" class="" >}}
+{{< figure src="/images/aulogo_uk_var2_white.png" alt="image" caption="" class="" >}}
 
 Statistisk analyse af materiale fra Peter Bangsgaard Stoustrup, Sektion for Ortodonti, Aarhus Universitet. Vi estimerede incidencen af orofaciale komplikationer samt identificerede prædiktorer for dentofaciale vækstafvigelser i patienter med Juvenil Idiopatisk Artrit (JIA) også kendt som børneleddegigt.
 

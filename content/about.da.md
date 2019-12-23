@@ -14,7 +14,7 @@ tags:
 
 Jeg er en statistiker med flair for programmering og en stor selvdrevet skabertrang. Jeg er uddannet Ph.d. i (bio)statistik samt kandidat i anvendt matematik med speciale i statistik. Begge grader er opnået igennem et tværfagligt samarbejde med Institut for Matematiske Fag, Aalborg Universitet, og Hæmatologisk Afdeling, Aalborg Universitetshospital. 
 
-{{< figure src="/network2_v3.jpg" alt="image" caption="Visualisering af et gen-netværk" class="right" >}}
+{{< figure src="/images/network2_v3.jpg" alt="image" caption="Visualisering af et gen-netværk" class="right" >}}
 
 Kort fortalt bestod mit Ph.d.-projekt af en række metoder i høj-dimensionel statistik om reproducerbarhed og data-integration med anvendelse i molekylær cancer biologi. I arbejdet beskæftigede jeg bl.a. med følgende metoder:
 
@@ -36,7 +36,7 @@ Slutteligt er jeg nu ansat ved [Seluxit](http://seluxit.com) i stillingen som *s
 
 ## Profil, CV og videnskabligt arbejde
 
-{{< figure src="/me_v2.jpg" alt="image" caption="Mig" class="left" >}}
+{{< figure src="/images/me_v2.jpg" alt="image" caption="Mig" class="left" >}}
 
 Min profil er bedst beskrevet på [LinkedIn](https://www.linkedin.com/in/aebilgrau) hvor du er velkommen til at kontakte mig. Via [Google Scholar](https://scholar.google.dk/citations?user=zQNl61YAAAAJ) kan du se en liste over mine videnskabelige publikationer. Et uddybende CV kan sendes ved efterspørgsel.
 
