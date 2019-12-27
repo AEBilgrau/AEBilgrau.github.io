@@ -2,14 +2,14 @@
 title: "Hierarchical Edge Bundles in R"
 date: `r Sys.Date()`
 time: "20:00"
-excerpt: "An introduction to my R implementation of Hierarchical Edge Bundles"
+excerpt: "Introduction to an R implementation of Hierarchical Edge Bundles"
 author: "Anders Ellern Bilgrau"
 draft: false
 toc: true
 tags:
-  - hej
-  - med
-  - dig
+  - hierachical clustering
+  - graphs
+  - visualisation
 images:
   - /network2.jpg
 output: 
@@ -25,7 +25,7 @@ library("kableExtra")
 options(kableExtra.html.bsTable = TRUE)
 ```
 
-{{< figure src="/images/network2.jpg" alt="image" caption="Hierarchical edge bundling of a gene network" class="big" >}}
+{{< figure src="/images/network2.jpg" alt="image" caption="Hierarchical edge bundling of a gene network. Blue indicate negative correlations, red indicate positive. The darker the color, the more strong the correlation." class="big" >}}
 
 ## Background
 
@@ -38,6 +38,7 @@ The plot above illustrates estimated correlations of selected genes within the d
 
 
 ## What is hierarchical edge bundling?
+
 Hierarchical edge bundling is a visualization technique for displaying the relations in a network that additionally submit to some hierarchical structure.
 The method was originally suggested in 2006 in a [lovely paper by Danny Holten](https://ieeexplore.ieee.org/document/4015425).
 In short, hierarchical edge bundling visualizes graphs (of nodes and edges) by guiding the edges along along a hierarchical tree of the nodes.
@@ -45,6 +46,7 @@ A bundling parameter then controls how tightly the edges follow this underlying 
 So what data fits into this technique?
 
 ### The data 
+
 The typical data suitable for this visualization needs two basic properties:
 
 1. The data can be represented as a graph (directed or undirected)
@@ -68,7 +70,7 @@ remotes::install_github("AEBilgrau/HierarchicalEdgeBundles")
 ```
 
 
-### Use some toy data
+### Toy data
 
 To illustrate the package use, we use a typical go-to dataset in **R**. 
 The `mtcars` dataset:
@@ -82,13 +84,13 @@ head(mtcars, n = 10) %>%
    kable(format = "markdown", align = "c")  # Pretty printing
 ```
 
-The `mtcars` contains data for various specs of 32 cars where only the `10` first cars are shown above. 
-Let's suppose that we would like to examine the 'closeness' of these cars to each other.
+The `mtcars` contains data for various specs of 32 cars where only the `n = 10` first cars are shown above. 
+Suppose that we would like to examine the 'closeness' of these cars to each other.
 So it is natural to evaluate all pairs of cars by some metric. 
-Using the euclidean metric, say, we get:
+Using `dist` and its default euclidean metric, say, to compute the distance matrix we get:
 
 
-```{r}
+```{r car_dist}
 car_dist <- dist(mtcars) # Compute pairwise distances 
 
 # Show first four rows and columns 
@@ -98,34 +100,38 @@ round(as.matrix(car_dist)[1:4, 1:4], 1)
 These distances are measures of 'dissimilarity' between the cars. 
 Greater value corresponds to a greater dissimilarity of the cars.
 We do not bother here to consider if the euclidean metrics is a well-suited measure for this (it is likely not).
-Nonetheless, since `car_dist` is a symmetric matrix it can be represented by a complete weighted graph. Using the `igraph`-package, we da display it as such easily:
+Nonetheless, since `car_dist` is a symmetric matrix it can be represented by a complete weighted graph. Using the `igraph` package, we can display it as such easily:
 
-```{r car_dist_plot, message=FALSE}
+```{r car_dist_plot, message=FALSE, echo = c(1:4, 15)}
 library("igraph")
 
 car_graph <- graph_from_adjacency_matrix(
-  as.matrix(car_dist), mode = "undirected", weighted = TRUE, diag = FALSE
+  log(1/as.matrix(car_dist)), mode = "undirected", weighted = TRUE, diag = FALSE
 )
 
-# map values linearly to [0, 1]
+# Function for mapping values linearly to [0, 1]
 rescale <- function(x) {  
   return((x - min(x))/max(x - min(x)))
 }
 
-E(car_graph)$width <- 5*rescale(E(car_graph)$weight)
+# Tweaks for some pretty plotting 
+E(car_graph)$width <- 4*rescale(E(car_graph)$weight)
 E(car_graph)$color <- hsv(h = 0.02, s = 0.6, alpha = rescale(E(car_graph)$weight))
 V(car_graph)$size <- 10
 V(car_graph)$color <- "steelblue"
 
 par(mar = c(0, 0, 0, 0))
-plot(car_graph)
+
+plot(car_graph, layout = layout_with_fr(car_graph, weights = E(car_graph)$weight))
 ```
+
+**Note** that I `log(1/dist)` as *similarity* --- graph layout algorithms assume 
 
 The first of our two ingredients.
 
 Using the  dissimilarities we can, for example, use regular hierarchical clustering to arrive a the second ingredient:
 
-```{r}
+```{r hclust_plot}
 car_hc <- hclust(car_dist, "ave")
 plot(car_hc)
 ```
@@ -136,17 +142,17 @@ We happily notice that similar cars indeed cluster together: Merc 450's are clos
 
 
 
-```{r, plots}
-# library("HierarchicalEdgeBundles")
-# library("igraph")
-# library("ape")
-# 
-# graph <- watts.strogatz.game(1, size = 10, nei = 2, p = 0.5)
-# adj.mat <- get.adjacency(graph)
-# phylo <- as.phylo(hclust(as.dist(1-adj.mat)))
-# 
-# plot(graph, layout = layout_in_circle(graph))
-# plotHEB(graph, phylo, type = "fan")
+```{r final_plot, plots}
+library("HierarchicalEdgeBundles")
+library("igraph")
+library("ape")
+
+graph <- watts.strogatz.game(1, size = 10, nei = 2, p = 0.5)
+adj.mat <- get.adjacency(graph)
+phylo <- as.phylo(hclust(as.dist(1-adj.mat)))
+
+plot(graph, layout = layout_in_circle(graph))
+plotHEB(graph, phylo, type = "fan")
 ```
 
 
