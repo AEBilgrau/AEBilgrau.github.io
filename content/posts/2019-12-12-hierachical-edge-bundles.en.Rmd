@@ -69,6 +69,11 @@ First things first. To install the package directly from the [repository on GitH
 remotes::install_github("AEBilgrau/HierarchicalEdgeBundles")
 ```
 
+```{r package_loads}
+library("HierarchicalEdgeBundles")
+library("ape")
+library("igraph")
+```
 
 ### Toy data
 
@@ -91,14 +96,20 @@ Using `dist` and its default euclidean metric, say, to compute the distance matr
 
 
 ```{r car_dist}
-car_dist <- dist(mtcars) # Compute pairwise distances 
+car_cor <- cor(mtcars)
+# Show first six rows and columns 
+round(as.matrix(car_cor)[1:6, 1:6], 1)
+
+
+# car_dist <- dist(mtcars) # Compute pairwise distances 
+car_dist <- as.dist((1 - car_cor)/2)
 
 # Show first four rows and columns 
-round(as.matrix(car_dist)[1:4, 1:4], 1)
+round(car_dist, 1)
 ```
 
-These distances are measures of 'dissimilarity' between the cars. 
-Greater value corresponds to a greater dissimilarity of the cars.
+These distances are measures of 'dissimilarity' between the car features. 
+Greater value corresponds to a greater dissimilarity of the features.
 We do not bother here to consider if the euclidean metrics is a well-suited measure for this (it is likely not).
 Nonetheless, since `car_dist` is a symmetric matrix it can be represented by a complete weighted graph. Using the `igraph` package, we can display it as such easily:
 
@@ -106,23 +117,28 @@ Nonetheless, since `car_dist` is a symmetric matrix it can be represented by a c
 library("igraph")
 
 car_graph <- graph_from_adjacency_matrix(
-  log(1/as.matrix(car_dist)), mode = "undirected", weighted = TRUE, diag = FALSE
+  car_cor,
+  # log(1/as.matrix(car_dist)), 
+  mode = "undirected", weighted = TRUE, diag = FALSE
 )
 
 # Function for mapping values linearly to [0, 1]
 rescale <- function(x) {  
-  return((x - min(x))/max(x - min(x)))
+  # return((x - min(x))/max(x - min(x)))
+  return((x + 1)/2)
 }
 
 # Tweaks for some pretty plotting 
+cr <- colorRamp(c("seagreen", "white", "tomato"), space = "Lab")
+v <- cr(rescale(E(car_graph)$weight))
 E(car_graph)$width <- 4*rescale(E(car_graph)$weight)
-E(car_graph)$color <- hsv(h = 0.02, s = 0.6, alpha = rescale(E(car_graph)$weight))
-V(car_graph)$size <- 10
-V(car_graph)$color <- "steelblue"
+E(car_graph)$color <- rgb(v[,1], v[,2], v[, 3], maxColorValue = 255)
+V(car_graph)$label.color <- "black"
+V(car_graph)$size <- 8
+V(car_graph)$color <- "white"
 
 par(mar = c(0, 0, 0, 0))
-
-plot(car_graph, layout = layout_with_fr(car_graph, weights = E(car_graph)$weight))
+plot(car_graph, layout = layout_in_circle(car_graph))
 ```
 
 **Note** that I `log(1/dist)` as *similarity* --- graph layout algorithms assume 
@@ -131,29 +147,37 @@ The first of our two ingredients.
 
 Using the  dissimilarities we can, for example, use regular hierarchical clustering to arrive a the second ingredient:
 
+
 ```{r hclust_plot}
-car_hc <- hclust(car_dist, "ave")
+car_hc <- as.phylo(hclust(car_dist, "ave"))
 plot(car_hc)
 ```
 
 A tree.
 
-We happily notice that similar cars indeed cluster together: Merc 450's are closely connected; as are some automakers such as Fiat and Mazda. 
+We happily notice that features which a priori are connected indeed also are (strongly) correlated and cluster together; e.g. the number of *cyl*inders and *disp*lacement. 
+
+Notice that I've wrapped the tree from `hclust` in `as.phylo` from the **ape** package to convert it as needed later. The reason is that the plotting uses the internal nodes of the tree and those are (or at least were) not available in the tree object from `hclust`.
 
 
+```{r bundling}
+car_phylo <-
 
-```{r final_plot, plots}
-library("HierarchicalEdgeBundles")
-library("igraph")
-library("ape")
-
-graph <- watts.strogatz.game(1, size = 10, nei = 2, p = 0.5)
-adj.mat <- get.adjacency(graph)
-phylo <- as.phylo(hclust(as.dist(1-adj.mat)))
-
-plot(graph, layout = layout_in_circle(graph))
-plotHEB(graph, phylo, type = "fan")
+par(mar = c(0,0,0,0))
+plotHEB(car_graph, car_phylo, beta = 0.8, type = "fan",
+        e.cols = E(car_graph)$color, args.lines = list(lwd = 2))
 ```
+
+Or with a little less bundling and as the phyologram and the internal nodes of the underlying tree plotted as well:
+
+```{r alt_bundle}
+par(mar = c(0,0,0,0))
+plotHEB(car_graph, car_phylo, beta = 0.7, type = "cladogram",
+        e.cols = E(car_graph)$color, args.lines = list(lwd = 2))
+```
+
+As can be noted in the documentation of the package, it is `plot.phylo` from **`ape`** that controls much of the plotting. This also explain the excessive white space with this layout as the entire tree would normally be drawn.
+
 
 
 
