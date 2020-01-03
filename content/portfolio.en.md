@@ -14,7 +14,7 @@ tags:
 
 #### Section of Orthodontics, University of Aarhus
 
-{{<figure src = "/aulogo_uk_var2_white.png" alt = "image" caption = "" class = "">}}
+{{<figure src = "/images/aulogo_uk_var2_white.png" alt = "image" caption = "" class = "">}}
 
 Statistical analysis of material from Peter Bangsgaard Stoustrup, Section of Orthodontics, University of Aarhus. We estimated the incidence of orofacial complications as well as identified predictors of dentofacial growth abnormalities in patients with Juvenile Idiopathic Arthritis (JIA) also known as rheumatoid arthritis.
 

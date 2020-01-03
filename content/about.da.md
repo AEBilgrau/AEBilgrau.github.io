@@ -14,7 +14,7 @@ tags:
 
 Jeg er en statistiker med flair for programmering og en stor selvdrevet skabertrang. Jeg er uddannet Ph.d. i (bio)statistik samt kandidat i anvendt matematik med speciale i statistik. Begge grader er opnået igennem et tværfagligt samarbejde med Institut for Matematiske Fag, Aalborg Universitet, og Hæmatologisk Afdeling, Aalborg Universitetshospital. 
 
-{{< figure src="/images/network2_v3.jpg" alt="image" caption="Visualisering af et gen-netværk" class="right" >}}
+{{< figure src="/images/network2_v3.jpg" alt="image" caption="Visualisering af et gen-netværk" class="right">}}
 
 Kort fortalt bestod mit Ph.d.-projekt af en række metoder i høj-dimensionel statistik om reproducerbarhed og data-integration med anvendelse i molekylær cancer biologi. I arbejdet beskæftigede jeg bl.a. med følgende metoder:
 
