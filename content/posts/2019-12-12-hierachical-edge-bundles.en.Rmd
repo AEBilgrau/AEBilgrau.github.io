@@ -160,7 +160,7 @@ A tree of the features.
 
 We happily notice that features which a priori are connected indeed also are (strongly) correlated and cluster together; e.g. the number of *cyl*inders and *disp*lacement, the weight of the cars (*wt*) strongly reflects in other features, etc. This is also illustrated in the graph which we styled using our distance measure.
 
-Notice that we've wrapped the tree from `hclust` in `as.phylo` from the **ape** package to convert it as needed later. The reason is that the plotting uses the internal nodes of the tree and those are (or at least were) not available in the tree object from `hclust`.
+Notice that we've wrapped the tree from `hclust` in `as.phylo` from the **ape** package to convert it for later use. The reason is that the plotting method uses the internal nodes of the tree and those are (or at least were) not available in the tree object from `hclust`.
 
 We are now ready to bundle the edges of the graph above.
 
@@ -179,6 +179,12 @@ plotHEB(car_graph, car_phylo, beta = 0.7, type = "cladogram",
 ```
 
 As can be noted in the documentation of the package, it is `plot.phylo` from **`ape`** that controls much of the plotting. This also explains the excessive white space in this layout as the entire tree would normally be drawn (as seen above).
+
+
+## Final remarks
+
+The hiearachical edge bundling plotting method certainly produces pretty graphics
+and useful in the right contexts. For them to be truely useful they need a careful construction of coloring, linewidth, and layout, and unfortunately the number of available layouts (in R) are lacking at the moment.
 
 
 
