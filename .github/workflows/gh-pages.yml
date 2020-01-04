@@ -19,7 +19,10 @@ jobs:
         hugo-version: '0.59.1'
 
     - name: Build
-      run: hugo --minify
+      run: |
+        hugo -t hermit --minify
+        cp ./CNAME ./public/CNAME
+        touch ./public/.nojekyll
 
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v2
