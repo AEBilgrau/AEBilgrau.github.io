@@ -1,2 +1,337 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Anders Ellern Bilgrau</title><link>https://bilgrau.com/posts/</link><description>Recent content in Posts on Anders Ellern Bilgrau</description><generator>Hugo -- gohugo.io</generator><language>da-dk</language><lastBuildDate>Fri, 03 Jan 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://bilgrau.com/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Hierarchical Edge Bundles in R</title><link>https://bilgrau.com/posts/hierachical-edge-bundles/</link><pubDate>Fri, 03 Jan 2020 00:00:00 +0000</pubDate><guid>https://bilgrau.com/posts/hierachical-edge-bundles/</guid><description>Hierarchical edge bundling of a gene network. Blue indicate negative correlations, red indicate positive. The darker the color, the more strong the correlation.
-Background During the finalization of my PhD, I implemented the so-called Hierarchical Edge Bundling plotting method for a paper now published in the Annals of Applied Statistics. Though the plot above sadly did not make the final cut, I admit due to an lack of added value, it appeared in the original submission and the thesis.</description></item></channel></rss>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Anders Ellern Bilgrau</title><link>https://bilgrau.com/posts/</link><description>Recent content in Posts on Anders Ellern Bilgrau</description><generator>Hugo -- gohugo.io</generator><language>da-dk</language><lastBuildDate>Fri, 03 Jan 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://bilgrau.com/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Hierarchical Edge Bundles in R</title><link>https://bilgrau.com/posts/hierachical-edge-bundles/</link><pubDate>Fri, 03 Jan 2020 00:00:00 +0000</pubDate><guid>https://bilgrau.com/posts/hierachical-edge-bundles/</guid><description>Hierarchical edge bundling of a gene network. Blue indicate negative correlations, red indicate positive. The darker the color, the more strong the correlation.
+Background During the finalization of my PhD, I implemented the so-called Hierarchical Edge Bundling plotting method for a paper now published in the Annals of Applied Statistics. Though the plot above sadly did not make the final cut, I admit due to an lack of added value, it appeared in the original submission and the thesis.</description><content type="html"><![CDATA[
+
+<figure class="big">
+    <img src="/images/network2.jpg"
+         alt="image"/> <figcaption>
+            <p>Hierarchical edge bundling of a gene network. Blue indicate negative correlations, red indicate positive. The darker the color, the more strong the correlation.</p>
+        </figcaption>
+</figure>
+
+
+<h2 id="background">Background</h2>
+
+<p>During the finalization of my PhD, I implemented the so-called <em>Hierarchical Edge Bundling</em> plotting method for a paper now <a href="https://projecteuclid.org/euclid.aoas/1536652979">published in the Annals of Applied Statistics</a>.
+Though the plot above sadly did not make the final cut, I admit due to an lack of added value, it appeared in the original submission and the thesis.
+Suffice it to say, I was still quite pleased with the method at the time, so I wrapped the methods into an <strong>R</strong>-package called <a href="https://github.com/AEBilgrau/HierarchicalEdgeBundles"><strong>HierachicalEdgeBundles</strong></a>.
+The plan was then to do a very small paper on this topic but I never got around to it. This a poor attempt of rectifying that.</p>
+
+<p>The plot above illustrates estimated correlations of selected genes within the disease called diffuse large B-cell lymphoma the method.</p>
+
+<h2 id="what-is-hierarchical-edge-bundling">What is hierarchical edge bundling?</h2>
+
+<p>Hierarchical edge bundling is a visualization technique for displaying the relations in a network that additionally submit to some hierarchical structure.
+The method was originally suggested in 2006 in a <a href="https://ieeexplore.ieee.org/document/4015425">lovely paper by Danny Holten</a>.
+In short, hierarchical edge bundling visualizes graphs (of nodes and edges) by guiding the edges along along a hierarchical tree of the nodes.
+A bundling parameter then controls how tightly the edges follow this underlying tree.
+So what data fits into this technique?</p>
+
+<h3 id="the-data">The data</h3>
+
+<p>The typical data suitable for this visualization needs two basic properties:</p>
+
+<ol>
+<li>The data can be represented as a graph (directed or undirected)</li>
+<li>The data can be arranged hierarchically</li>
+</ol>
+
+<p>If the data does not adhere to one of these properties the lacking properties may often be constructed.
+Now, I say &lsquo;data&rsquo; here. But by &lsquo;data&rsquo; I mean the likely processed data that goes in to the plotting method, not necessarily the <em>collected</em> data.</p>
+
+<p>Let me illustrate by using the <strong>R</strong> package.</p>
+
+<h2 id="using-the-hierarchicaledgebundles-package">Using the <strong>HierarchicalEdgeBundles</strong> package</h2>
+
+<h3 id="installation">Installation</h3>
+
+<p>First things first. To install the package directly from the <a href="https://github.com/AEBilgrau/HierarchicalEdgeBundles">repository on GitHub</a>, we run:</p>
+<div class="highlight"><pre class="chroma"><code class="language-r" data-lang="r"><span class="c1">#install.packages(&#34;remotes&#34;)  # Uncomment if devtools is not installed</span>
+<span class="n">remotes</span><span class="o">::</span><span class="nf">install_github</span><span class="p">(</span><span class="s">&#34;AEBilgrau/HierarchicalEdgeBundles&#34;</span><span class="p">)</span></code></pre></div>
+<p>Then we load the needed packages:</p>
+<div class="highlight"><pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">library</span><span class="p">(</span><span class="s">&#34;HierarchicalEdgeBundles&#34;</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="s">&#34;ape&#34;</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="s">&#34;igraph&#34;</span><span class="p">)</span></code></pre></div>
+<h3 id="toy-data">Toy data</h3>
+
+<p>To illustrate the package use, we use a typical go-to dataset in <strong>R</strong>.
+The <code>mtcars</code> dataset:</p>
+<div class="highlight"><pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">data</span><span class="p">(</span><span class="n">mtcars</span><span class="p">)</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">mtcars</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="m">10</span><span class="p">)</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th align="left"></th>
+<th align="center">mpg</th>
+<th align="center">cyl</th>
+<th align="center">disp</th>
+<th align="center">hp</th>
+<th align="center">drat</th>
+<th align="center">wt</th>
+<th align="center">qsec</th>
+<th align="center">vs</th>
+<th align="center">am</th>
+<th align="center">gear</th>
+<th align="center">carb</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">Mazda RX4</td>
+<td align="center">21.0</td>
+<td align="center">6</td>
+<td align="center">160.0</td>
+<td align="center">110</td>
+<td align="center">3.90</td>
+<td align="center">2.620</td>
+<td align="center">16.46</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">4</td>
+<td align="center">4</td>
+</tr>
+
+<tr>
+<td align="left">Mazda RX4 Wag</td>
+<td align="center">21.0</td>
+<td align="center">6</td>
+<td align="center">160.0</td>
+<td align="center">110</td>
+<td align="center">3.90</td>
+<td align="center">2.875</td>
+<td align="center">17.02</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">4</td>
+<td align="center">4</td>
+</tr>
+
+<tr>
+<td align="left">Datsun 710</td>
+<td align="center">22.8</td>
+<td align="center">4</td>
+<td align="center">108.0</td>
+<td align="center">93</td>
+<td align="center">3.85</td>
+<td align="center">2.320</td>
+<td align="center">18.61</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">4</td>
+<td align="center">1</td>
+</tr>
+
+<tr>
+<td align="left">Hornet 4 Drive</td>
+<td align="center">21.4</td>
+<td align="center">6</td>
+<td align="center">258.0</td>
+<td align="center">110</td>
+<td align="center">3.08</td>
+<td align="center">3.215</td>
+<td align="center">19.44</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">3</td>
+<td align="center">1</td>
+</tr>
+
+<tr>
+<td align="left">Hornet Sportabout</td>
+<td align="center">18.7</td>
+<td align="center">8</td>
+<td align="center">360.0</td>
+<td align="center">175</td>
+<td align="center">3.15</td>
+<td align="center">3.440</td>
+<td align="center">17.02</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">3</td>
+<td align="center">2</td>
+</tr>
+
+<tr>
+<td align="left">Valiant</td>
+<td align="center">18.1</td>
+<td align="center">6</td>
+<td align="center">225.0</td>
+<td align="center">105</td>
+<td align="center">2.76</td>
+<td align="center">3.460</td>
+<td align="center">20.22</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">3</td>
+<td align="center">1</td>
+</tr>
+
+<tr>
+<td align="left">Duster 360</td>
+<td align="center">14.3</td>
+<td align="center">8</td>
+<td align="center">360.0</td>
+<td align="center">245</td>
+<td align="center">3.21</td>
+<td align="center">3.570</td>
+<td align="center">15.84</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">3</td>
+<td align="center">4</td>
+</tr>
+
+<tr>
+<td align="left">Merc 240D</td>
+<td align="center">24.4</td>
+<td align="center">4</td>
+<td align="center">146.7</td>
+<td align="center">62</td>
+<td align="center">3.69</td>
+<td align="center">3.190</td>
+<td align="center">20.00</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">4</td>
+<td align="center">2</td>
+</tr>
+
+<tr>
+<td align="left">Merc 230</td>
+<td align="center">22.8</td>
+<td align="center">4</td>
+<td align="center">140.8</td>
+<td align="center">95</td>
+<td align="center">3.92</td>
+<td align="center">3.150</td>
+<td align="center">22.90</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">4</td>
+<td align="center">2</td>
+</tr>
+
+<tr>
+<td align="left">Merc 280</td>
+<td align="center">19.2</td>
+<td align="center">6</td>
+<td align="center">167.6</td>
+<td align="center">123</td>
+<td align="center">3.92</td>
+<td align="center">3.440</td>
+<td align="center">18.30</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">4</td>
+<td align="center">4</td>
+</tr>
+</tbody>
+</table>
+
+<p>The <code>mtcars</code> contains data for various specs of 32 cars where only the <code>n = 10</code> first cars are shown above. Run <code>help(&quot;mtcars&quot;)</code> to read more about this dataset.</p>
+
+<h3 id="analysis-of-features">Analysis of features</h3>
+
+<p>Suppose that we would like to examine features of these cars and how they relate to each other.
+So it is natural to evaluate all pairs of features by some metric.</p>
+<div class="highlight"><pre class="chroma"><code class="language-r" data-lang="r"><span class="c1"># Compute correlation matrix of features</span>
+<span class="n">car_cor</span> <span class="o">&lt;-</span> <span class="nf">cor</span><span class="p">(</span><span class="n">mtcars</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">round</span><span class="p">(</span><span class="n">car_cor</span><span class="p">,</span> <span class="m">1</span><span class="p">))</span></code></pre></div>
+<pre><code>##       mpg  cyl disp   hp drat   wt qsec   vs   am gear carb
+## mpg   1.0 -0.9 -0.8 -0.8  0.7 -0.9  0.4  0.7  0.6  0.5 -0.6
+## cyl  -0.9  1.0  0.9  0.8 -0.7  0.8 -0.6 -0.8 -0.5 -0.5  0.5
+## disp -0.8  0.9  1.0  0.8 -0.7  0.9 -0.4 -0.7 -0.6 -0.6  0.4
+## hp   -0.8  0.8  0.8  1.0 -0.4  0.7 -0.7 -0.7 -0.2 -0.1  0.7
+## drat  0.7 -0.7 -0.7 -0.4  1.0 -0.7  0.1  0.4  0.7  0.7 -0.1
+## wt   -0.9  0.8  0.9  0.7 -0.7  1.0 -0.2 -0.6 -0.7 -0.6  0.4
+## qsec  0.4 -0.6 -0.4 -0.7  0.1 -0.2  1.0  0.7 -0.2 -0.2 -0.7
+## vs    0.7 -0.8 -0.7 -0.7  0.4 -0.6  0.7  1.0  0.2  0.2 -0.6
+## am    0.6 -0.5 -0.6 -0.2  0.7 -0.7 -0.2  0.2  1.0  0.8  0.1
+## gear  0.5 -0.5 -0.6 -0.1  0.7 -0.6 -0.2  0.2  0.8  1.0  0.3
+## carb -0.6  0.5  0.4  0.7 -0.1  0.4 -0.7 -0.6  0.1  0.3  1.0
+</code></pre>
+
+<p>Since <code>car_cor</code> is a symmetric matrix it can be represented by a complete edge-weighted graph were the weights are the correlations. Using the <code>igraph</code> package, we can display it as such easily:</p>
+<div class="highlight"><pre class="chroma"><code class="language-r" data-lang="r"><span class="c1"># Create igraph</span>
+<span class="n">car_graph</span> <span class="o">&lt;-</span> <span class="nf">graph_from_adjacency_matrix</span><span class="p">(</span>
+  <span class="n">car_cor</span><span class="p">,</span> <span class="n">mode</span> <span class="o">=</span> <span class="s">&#34;undirected&#34;</span><span class="p">,</span> <span class="n">weighted</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span> <span class="n">diag</span> <span class="o">=</span> <span class="kc">FALSE</span>
+<span class="p">)</span>
+
+<span class="c1"># Function for mapping correlations to colors</span>
+<span class="n">make_colors</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">wgt</span><span class="p">)</span> <span class="p">{</span>  
+  <span class="n">cr</span> <span class="o">&lt;-</span> <span class="nf">colorRamp</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&#34;tomato&#34;</span><span class="p">,</span> <span class="s">&#34;white&#34;</span><span class="p">,</span> <span class="s">&#34;seagreen&#34;</span><span class="p">),</span> <span class="n">space</span> <span class="o">=</span> <span class="s">&#34;Lab&#34;</span><span class="p">)</span>
+  <span class="n">v</span> <span class="o">&lt;-</span> <span class="nf">cr</span><span class="p">((</span><span class="n">wgt</span> <span class="o">+</span> <span class="m">1</span><span class="p">)</span><span class="o">/</span><span class="m">2</span><span class="p">)</span> <span class="c1"># map linearly to [0, 1]</span>
+  <span class="nf">return</span><span class="p">(</span><span class="nf">rgb</span><span class="p">(</span><span class="n">v[</span><span class="p">,</span><span class="m">1</span><span class="n">]</span><span class="p">,</span> <span class="n">v[</span><span class="p">,</span><span class="m">2</span><span class="n">]</span><span class="p">,</span> <span class="n">v[</span><span class="p">,</span> <span class="m">3</span><span class="n">]</span><span class="p">,</span> <span class="n">maxColorValue</span> <span class="o">=</span> <span class="m">255</span><span class="p">))</span>
+<span class="p">}</span>
+
+<span class="c1"># Tweaks for some pretty plotting </span>
+<span class="nf">E</span><span class="p">(</span><span class="n">car_graph</span><span class="p">)</span><span class="o">$</span><span class="n">width</span> <span class="o">&lt;-</span> <span class="m">4</span><span class="o">*</span><span class="nf">abs</span><span class="p">(</span><span class="nf">E</span><span class="p">(</span><span class="n">car_graph</span><span class="p">)</span><span class="o">$</span><span class="n">weight</span><span class="p">)</span>
+<span class="nf">E</span><span class="p">(</span><span class="n">car_graph</span><span class="p">)</span><span class="o">$</span><span class="n">color</span> <span class="o">&lt;-</span> <span class="nf">make_colors</span><span class="p">(</span><span class="nf">E</span><span class="p">(</span><span class="n">car_graph</span><span class="p">)</span><span class="o">$</span><span class="n">weight</span><span class="p">)</span>
+<span class="nf">V</span><span class="p">(</span><span class="n">car_graph</span><span class="p">)</span><span class="o">$</span><span class="n">label.color</span> <span class="o">&lt;-</span> <span class="s">&#34;black&#34;</span>
+<span class="nf">V</span><span class="p">(</span><span class="n">car_graph</span><span class="p">)</span><span class="o">$</span><span class="n">size</span> <span class="o">&lt;-</span> <span class="m">8</span>
+<span class="nf">V</span><span class="p">(</span><span class="n">car_graph</span><span class="p">)</span><span class="o">$</span><span class="n">color</span> <span class="o">&lt;-</span> <span class="s">&#34;white&#34;</span>
+
+<span class="nf">par</span><span class="p">(</span><span class="n">mar</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">))</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">car_graph</span><span class="p">,</span> <span class="n">layout</span> <span class="o">=</span> <span class="nf">layout_in_circle</span><span class="p">(</span><span class="n">car_graph</span><span class="p">))</span></code></pre></div>
+<p><img src="/images/hierachical-edge-bundles.en/car_dist_plot-1.png" alt="plot of chunk car_dist_plot" /></p>
+
+<p>This gives us the first of our two new ingredients &mdash; a graph of the features.</p>
+
+<p>Using <code>as.dist</code> and and the sample correlation matrix we we can compute a dissimilarity matrix:</p>
+<div class="highlight"><pre class="chroma"><code class="language-r" data-lang="r"><span class="c1"># Compute pairwise &#39;distances&#39; (high absolute correlation features are &#39;close&#39;)</span>
+<span class="n">car_dist</span> <span class="o">&lt;-</span> <span class="nf">as.dist</span><span class="p">(</span><span class="m">1</span> <span class="o">-</span> <span class="nf">abs</span><span class="p">(</span><span class="n">car_cor</span><span class="p">))</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">round</span><span class="p">(</span><span class="n">car_dist</span><span class="p">,</span> <span class="m">1</span><span class="p">))</span></code></pre></div>
+<pre><code>##      mpg cyl disp  hp drat  wt qsec  vs  am gear
+## cyl  0.1                                        
+## disp 0.2 0.1                                    
+## hp   0.2 0.2  0.2                               
+## drat 0.3 0.3  0.3 0.6                           
+## wt   0.1 0.2  0.1 0.3  0.3                      
+## qsec 0.6 0.4  0.6 0.3  0.9 0.8                  
+## vs   0.3 0.2  0.3 0.3  0.6 0.4  0.3             
+## am   0.4 0.5  0.4 0.8  0.3 0.3  0.8 0.8         
+## gear 0.5 0.5  0.4 0.9  0.3 0.4  0.8 0.8 0.2     
+## carb 0.4 0.5  0.6 0.3  0.9 0.6  0.3 0.4 0.9  0.7
+</code></pre>
+
+<p>These distances are measures of &lsquo;dissimilarity&rsquo; or &lsquo;unrelatedness&rsquo; between the car features.
+Greater values corresponds to a greater dissimilarity of the features and vice versa.
+We do not bother here to consider if the &lsquo;1 minus the absolute Pearson correlation&rsquo; measure is a particularly well-suited measure for this (it is perhaps not). Nonetheless, the intuition here is that strong correlations (negative or positive) are considered &lsquo;close&rsquo; and near-zero correlations are considered distant. I.e. this gives a crude measure of dependence.</p>
+
+<p>Using the dissimilarities we can, for example, use regular hierarchical clustering to arrive at the second ingredient needed:</p>
+<div class="highlight"><pre class="chroma"><code class="language-r" data-lang="r"><span class="n">car_phylo</span> <span class="o">&lt;-</span> <span class="nf">as.phylo</span><span class="p">(</span><span class="nf">hclust</span><span class="p">(</span><span class="n">car_dist</span><span class="p">,</span> <span class="s">&#34;ave&#34;</span><span class="p">))</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">car_phylo</span><span class="p">)</span></code></pre></div>
+<p><img src="/images/hierachical-edge-bundles.en/hclust_plot-1.png" alt="plot of chunk hclust_plot" /></p>
+
+<p>A tree of the features.</p>
+
+<p>We happily notice that features which a priori are connected indeed also are (strongly) correlated and cluster together; e.g. the number of *cyl*inders and *disp*lacement, the weight of the cars (<em>wt</em>) strongly reflects in other features, etc. This is also illustrated in the graph which we styled using our distance measure.</p>
+
+<p>Notice that we&rsquo;ve wrapped the tree from <code>hclust</code> in <code>as.phylo</code> from the <strong>ape</strong> package to convert it for later use. The reason is that the plotting method uses the internal nodes of the tree and those are (or at least were) not available in the tree object from <code>hclust</code>.</p>
+
+<p>We are now ready to bundle the edges of the graph above.</p>
+<div class="highlight"><pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">plotHEB</span><span class="p">(</span><span class="n">car_graph</span><span class="p">,</span> <span class="n">car_phylo</span><span class="p">,</span> <span class="n">beta</span> <span class="o">=</span> <span class="m">0.8</span><span class="p">,</span> <span class="n">type</span> <span class="o">=</span> <span class="s">&#34;fan&#34;</span><span class="p">,</span>
+        <span class="n">e.cols</span> <span class="o">=</span> <span class="nf">E</span><span class="p">(</span><span class="n">car_graph</span><span class="p">)</span><span class="o">$</span><span class="n">color</span><span class="p">,</span> <span class="n">args.lines</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="n">lwd</span> <span class="o">=</span> <span class="m">2</span><span class="p">))</span></code></pre></div>
+<p><img src="/images/hierachical-edge-bundles.en/bundling-1.png" alt="plot of chunk bundling" /></p>
+
+<p>Or with a little less bundling and as the phylogram and the internal nodes of the underlying tree plotted as well:</p>
+<div class="highlight"><pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">plotHEB</span><span class="p">(</span><span class="n">car_graph</span><span class="p">,</span> <span class="n">car_phylo</span><span class="p">,</span> <span class="n">beta</span> <span class="o">=</span> <span class="m">0.7</span><span class="p">,</span> <span class="n">type</span> <span class="o">=</span> <span class="s">&#34;cladogram&#34;</span><span class="p">,</span>
+        <span class="n">e.cols</span> <span class="o">=</span> <span class="nf">E</span><span class="p">(</span><span class="n">car_graph</span><span class="p">)</span><span class="o">$</span><span class="n">color</span><span class="p">,</span> <span class="n">args.lines</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="n">lwd</span> <span class="o">=</span> <span class="m">2</span><span class="p">))</span></code></pre></div>
+<p><img src="/images/hierachical-edge-bundles.en/alt_bundle-1.png" alt="plot of chunk alt_bundle" /></p>
+
+<p>As can be noted in the documentation of the package, it is <code>plot.phylo</code> from <strong><code>ape</code></strong> that controls much of the plotting. This also explains the excessive white space in this layout as the entire tree would normally be drawn (as seen above).</p>
+
+<h2 id="final-remarks">Final remarks</h2>
+
+<p>The hiearachical edge bundling plotting method certainly produces pretty graphics
+and useful in the right contexts. For them to be truely useful they need a careful construction of coloring, linewidth, and layout, and unfortunately the number of available layouts (in R) are lacking at the moment.</p>
+
+<h2 id="references">References</h2>
+
+<ul>
+<li><p>Danny Holten (2006) <a href="https://ieeexplore.ieee.org/document/4015425"><strong>&ldquo;Hierarchical Edge Bundles: Visualization of Adjacency Relations in Hierarchical Data&rdquo;</strong></a>, IEEE Transactions on Visualization and Computer Graphics, 12 (5): 741&ndash;748. <a href="https://ieeexplore.ieee.org/document/4015425">https://ieeexplore.ieee.org/document/4015425</a></p></li>
+
+<li><p>Bilgrau, Anders Ellern; Brøndum, Rasmus Froberg; Eriksen, Poul Svante; Dybkær, Karen; Bøgsted, Martin. <a href="https://projecteuclid.org/euclid.aoas/1536652979">Estimating a common covariance matrix for network meta-analysis of gene expression datasets in diffuse large B-cell lymphoma.</a> Ann. Appl. Stat. 12 (2018), no. 3, 1894&ndash;1913. doi:10.<sup>1214</sup>&frasl;<sub>18</sub>-AOAS1136. <a href="https://projecteuclid.org/euclid.aoas/1536652979">https://projecteuclid.org/euclid.aoas/1536652979</a>
+<!---Automatically generated from 'render-content.R'---></p></li>
+</ul>
+]]></content></item></channel></rss>
