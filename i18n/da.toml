@@ -1,0 +1,38 @@
+# Translations for Danish
+# https://gohugo.io/content-management/multilingual/#translation-of-strings
+
+# 404.html
+#
+[notFound]
+other = "Ups, siden blev ikke found…"
+
+[home]
+other = "Home"
+
+[archives]
+other = "Arkiv"
+
+# posts/single.html
+#
+[seeAlso]
+other = "See også"
+
+[wordCount]
+other = "{{ .WordCount }} ord"
+
+[tableOfContents]
+other = "Indholdsfortegnelse"
+
+[newer]
+other = "Nyere"
+
+[older]
+other = "Ældre"
+
+# partials/header.html
+#
+[menu]
+other = "Menu"
+
+[featuredImage]
+other = "Udvalgt billede"
