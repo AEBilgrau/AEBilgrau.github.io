@@ -323,8 +323,14 @@ We do not bother here to consider if the &lsquo;1 minus the absolute Pearson cor
 
 <h2 id="final-remarks">Final remarks</h2>
 
-<p>The hiearachical edge bundling plotting method certainly produces pretty graphics
-and useful in the right contexts. For them to be truely useful they need a careful construction of coloring, linewidth, and layout, and unfortunately the number of available layouts (in R) are lacking at the moment.</p>
+<p>The hierarchical edge bundling plotting method certainly produces pretty graphics
+and useful in the right contexts. For them to be truly useful they need a careful construction of coloring, line width, and layout, and unfortunately the number of available layouts (in R) are lacking at the moment.</p>
+
+<h3 id="edits">Edits</h3>
+
+<ul>
+<li>2018-01-08 Minor grammar/typo fixes</li>
+</ul>
 
 <h2 id="references">References</h2>
 
