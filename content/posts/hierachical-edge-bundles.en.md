@@ -1,6 +1,6 @@
 ---
 title: "Hierarchical Edge Bundles in R"
-date: 2020-01-03
+date: "2020-01-03"
 time: "20:00"
 excerpt: "Introduction to an R implementation of Hierarchical Edge Bundles"
 author: "Anders Ellern Bilgrau"
@@ -232,10 +232,13 @@ As can be noted in the documentation of the package, it is `plot.phylo` from **`
 
 ## Final remarks
 
-The hiearachical edge bundling plotting method certainly produces pretty graphics
-and useful in the right contexts. For them to be truely useful they need a careful construction of coloring, linewidth, and layout, and unfortunately the number of available layouts (in R) are lacking at the moment.
+The hierarchical edge bundling plotting method certainly produces pretty graphics
+and useful in the right contexts. For them to be truly useful they need a careful construction of coloring, line width, and layout, and unfortunately the number of available layouts (in R) are lacking at the moment.
 
 
+### Edits
+
+ * 2018-01-08 Minor grammar/typo fixes
 
 
 ## References
