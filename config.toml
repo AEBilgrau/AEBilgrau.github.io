@@ -18,7 +18,7 @@ title = "Anders Ellern Bilgrau"
   
 [languages.da]
   weight = 0
-  homeSubtitle = 'Statistiker, programmør, "data scientist", ...'
+  homeSubtitle = 'Statistiker, programmør, data scientist, ...'
   languageName = "Dansk"
 
 [[languages.da.menu.main]]
@@ -38,7 +38,7 @@ title = "Anders Ellern Bilgrau"
 
 [languages.en]
   weight = 1
-  homeSubtitle = 'Statistician, programmer, "data scientist", ...'
+  homeSubtitle = 'Statistician, programmer, data scientist, ...'
   languageName = "English"
 
 [[languages.en.menu.main]]
@@ -76,7 +76,7 @@ title = "Anders Ellern Bilgrau"
   # images = [""]
   themeColor = "#495f5c"
 
-  homeSubtitle = '"Data scientist" (statistician, programmer)'
+  homeSubtitle = 'Data scientist (statistician, programmer)'
   footerCopyright = ' · <a href="/">dansk</a> · <a href="/en/">english</a>'
   # bgImg = ""  # Homepage background-image URL
 
